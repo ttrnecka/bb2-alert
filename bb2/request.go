@@ -93,10 +93,9 @@ func handlePackets(r io.Reader, cfg config.Config) {
 			header := messageBuffer.Next(end + len(HEADER_END))
 			data := fmt.Sprintf("header:\n%s\n", string(header))
 			if *debugLog {
-				log.Printf(data)
+				xmlLogger.Printf(data)
 			}
 
-			xmlLogger.Printf(data)
 			err = xml.Unmarshal(header, &Header)
 			if err != nil {
 				panic(err)
@@ -132,15 +131,13 @@ func handlePackets(r io.Reader, cfg config.Config) {
 					payload = strings.ReplaceAll(payload, "&#060;", "<")
 					payload = strings.ReplaceAll(payload, "&#062;", ">")
 					if *debugLog {
-						log.Println(payload)
+						xmlLogger.Printf(payload)
 					}
-					xmlLogger.Printf(payload)
 				} else {
 					payload = dataBuffer.String()
 					if *debugLog {
-						log.Println(dataBuffer.String())
+						xmlLogger.Printf(payload)
 					}
-					xmlLogger.Printf(payload)
 				}
 				// header and full message is read, can parse and process
 				if Header.Data.MessageName == MESSAGE_NAME_MATCH_FOUND && cfg.BB2.MatchFoundAlarm {
