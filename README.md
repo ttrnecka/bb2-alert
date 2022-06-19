@@ -1,9 +1,9 @@
 # BB2 Alert
-This tool can captue live Blood Bowl 2 data stream and alart the user on Discord that match has started
+This tool captures live Blood Bowl 2 data stream and alerts the user on Discord that match has started.
 
 ## Configuration
 
-1. Get discord webhook. See https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+1. Create discord webhook for a channel you want to receive the notifications into. See https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 
 Example:
 
@@ -13,7 +13,7 @@ Example:
   Token = J76ho2FPfAqX_NoXzGu5Ec0ZSP-upvCgZ5T3adwKQB72S7zyZU0xrTM8muwMmiwojjFJ
   
   ```
-2. Get your Discord User ID. See https://www.alphr.com/discord-find-user-id/
+2. Get your Discord UserID. See https://www.alphr.com/discord-find-user-id/
 
 3. Update config.yaml
 ```
@@ -22,5 +22,6 @@ discord:
   token: <Token>
   user_id: <UserId>
 ```
-4. Start bb2_alert
+4. Start bb2-alert
 5. Start BB2 and spin
+6. Get annoyed that you are 500TV down agaist killer chorfs
