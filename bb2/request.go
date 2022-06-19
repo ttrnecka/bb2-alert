@@ -58,7 +58,7 @@ func handlePackets(r io.Reader, cfg config.Config) {
 
 	sniff := bufio.NewReader(r)
 
-	wh := discord.WebHook{ServerId: cfg.Discord.ServerID, Token: cfg.Discord.Token, UserId: cfg.Discord.UserID}
+	wh := discord.WebHook{WebhookID: cfg.Discord.WebhookID, Token: cfg.Discord.Token, UserId: cfg.Discord.UserID}
 
 	for {
 		n, err := sniff.Read(readBuffer)

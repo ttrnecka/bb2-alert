@@ -11,13 +11,13 @@ import (
 )
 
 type WebHook struct {
-	ServerId uint64
-	Token    string
-	UserId   uint64
+	WebhookID uint64
+	Token     string
+	UserId    uint64
 }
 
 func (w *WebHook) Send(s string) {
-	client := webhook.New(snowflake.ID(w.ServerId), w.Token)
+	client := webhook.New(snowflake.ID(w.WebhookID), w.Token)
 
 	if _, err := client.CreateMessage(discord.NewWebhookMessageCreateBuilder().
 		SetContentf("<@%d> %s", w.UserId, s).

@@ -8,9 +8,7 @@ This tool captures live Blood Bowl 2 data stream and alerts the user on Discord 
 Example:
 
   ```
-  https://discord.com/api/webhooks/988079967420166194/J76ho2FPfAqX_NoXzGu5Ec0ZSP-upvCgZ5T3adwKQB72S7zyZU0xrTM8muwMmiwojjFJ
-  ServerID = 988079967420166194
-  Token = J76ho2FPfAqX_NoXzGu5Ec0ZSP-upvCgZ5T3adwKQB72S7zyZU0xrTM8muwMmiwojjFJ
+  https://discord.com/api/webhooks/<webhook_id>/<token>
   
   ```
 2. Get your Discord UserID. See https://www.alphr.com/discord-find-user-id/
@@ -18,9 +16,9 @@ Example:
 3. Update config.yaml
 ```
 discord:
-  server_id: <ServeID>
-  token: <Token>
-  user_id: <UserId>
+  webhook_id: <webhook_id>
+  token: <token>
+  user_id: <UserID>
 ```
 4. Start bb2-alert
 5. Start BB2 and spin

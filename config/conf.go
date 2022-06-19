@@ -15,9 +15,9 @@ type Config struct {
 }
 
 type DiscordConfig struct {
-	ServerID uint64 `yaml:"server_id"`
-	Token    string `yaml:"token"`
-	UserID   uint64 `yaml:"user_id"`
+	WebhookID uint64 `yaml:"webhook_id"`
+	Token     string `yaml:"token"`
+	UserID    uint64 `yaml:"user_id"`
 }
 
 type BB2Config struct {
