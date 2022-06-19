@@ -111,6 +111,7 @@ func handlePackets(r io.Reader, cfg config.Config) {
 			if *debugLog {
 				log.Printf("buffer size: %d\n", messageBuffer.Len())
 			}
+
 			if messageBuffer.Len() >= Header.Data.Size {
 				dataBuffer.Write(messageBuffer.Next(Header.Data.Size))
 				header_start, header_end = false, false
@@ -127,7 +128,7 @@ func handlePackets(r io.Reader, cfg config.Config) {
 					if err != nil {
 						panic(err)
 					}
-					payload := string(output)
+					payload = string(output)
 					payload = strings.ReplaceAll(payload, "&#060;", "<")
 					payload = strings.ReplaceAll(payload, "&#062;", ">")
 					if *debugLog {
